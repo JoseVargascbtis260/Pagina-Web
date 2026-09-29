@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Programación | Inteligencia Artificial | CBTIS 260</title>
+<link rel="stylesheet" href="css/estilos.css">
+<link rel="manifest" href="manifest.webmanifest">
+<meta name="theme-color" content="#0f2b47">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="IA CBTIS 260">
+<link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+<link rel="icon" type="image/png" href="icons/icon-192.png">
+<script src="js/pwa.js" defer></script>
+</head>
+<body>
+
+<header>
+  <div class="marca">
+    <img src="img/logo-cbtis260.jpg" alt="Logo del CBTIS 260">
+    <div>
+      <h1>Centro de Bachillerato Tecnológico Industrial y de Servicios 260</h1>
+      <p class="lema">"Carmen Serdán"</p>
+    </div>
+  </div>
+  <p class="materia">Inteligencia Artificial: qué es, de dónde viene, cómo funciona y hacia dónde va.</p>
+</header>
+
+<nav>
+  <ul>
+    <li><a href="index.html">Inicio</a></li>
+    <li><a href="que-es.html">Qué es</a></li>
+    <li><a href="antecedentes.html">Antecedentes</a></li>
+    <li><a href="tipos.html">Tipos</a></li>
+    <li><a href="como-funciona.html">Cómo funciona</a></li>
+    <li><a href="generativa.html">IA generativa</a></li>
+    <li><a href="aplicaciones.html">Aplicaciones</a></li>
+    <li><a href="educacion.html">En la escuela</a></li>
+    <li><a href="codigo.html" class="activa" aria-current="page">Programación</a></li>
+    <li><a href="video.html">Video</a></li>
+    <li><a href="conclusion.html">Conclusión</a></li>
+  </ul>
+</nav>
+
+<main>
+
+  <section id="codigo">
+    <h2>Programación sobre IA</h2>
+    <p class="bajada">Un ejemplo completo que puedes ejecutar y modificar.</p>
+
+    <p>
+      El siguiente programa en Python entrena una red neuronal sencilla para clasificar flores del
+      conjunto de datos <em>iris</em>, uno de los clásicos para empezar. A partir de cuatro medidas
+      de la flor, el modelo aprende a distinguir entre tres especies.
+    </p>
+
+    <h3>Instalación de la biblioteca</h3>
+    <pre><code>pip install scikit-learn</code></pre>
+
+    <h3>Código comentado</h3>
+    <pre><code>from sklearn.neural_network import MLPClassifier
+from sklearn.datasets import load_iris
+from sklearn.model_selection import train_test_split
+from sklearn.preprocessing import StandardScaler
+from sklearn.metrics import classification_report
+
+# 1. Cargar los datos de ejemplo
+datos = load_iris()
+X, y = datos.data, datos.target   # X = medidas de la flor, y = especie
+
+# 2. Dividir en entrenamiento (80%) y prueba (20%)
+X_train, X_test, y_train, y_test = train_test_split(
+    X, y, test_size=0.2, random_state=42
+)
+
+# 3. Escalar los datos: las redes neuronales aprenden
+#    mucho mejor si todas las medidas están en rangos parecidos
+escalador = StandardScaler()
+X_train = escalador.fit_transform(X_train)
+X_test  = escalador.transform(X_test)
+
+# 4. Crear y entrenar el modelo
+modelo = MLPClassifier(hidden_layer_sizes=(10,), max_iter=1000, random_state=42)
+modelo.fit(X_train, y_train)
+
+# 5. Evaluar con los datos que el modelo nunca vio
+precision = modelo.score(X_test, y_test)
+print("Precisión del modelo:", round(precision * 100, 2), "%")
+
+# 6. Reporte detallado por especie
+predicciones = modelo.predict(X_test)
+print(classification_report(y_test, predicciones, target_names=datos.target_names))
+
+# 7. Predecir una flor nueva
+flor_nueva = escalador.transform([[5.1, 3.5, 1.4, 0.2]])
+resultado = modelo.predict(flor_nueva)
+print("Especie predicha:", datos.target_names[resultado[0]])</code></pre>
+
+    <h3>Qué hace cada parte</h3>
+    <ul class="lista">
+      <li><code>hidden_layer_sizes=(10,)</code> define una capa oculta con 10 neuronas. Más neuronas dan más capacidad, pero también más riesgo de sobreajuste.</li>
+      <li><code>max_iter=1000</code> es el número máximo de pasadas de ajuste. Si aparece una advertencia de convergencia, hay que aumentarlo.</li>
+      <li><code>random_state=42</code> fija el azar para que el resultado sea el mismo cada vez que corras el programa.</li>
+      <li><code>StandardScaler</code> normaliza las medidas; sin este paso el modelo suele aprender bastante peor.</li>
+    </ul>
+
+    <div class="nota">
+      <p><strong>Para experimentar:</strong> cambia el tamaño de la capa oculta, prueba con <code>test_size=0.3</code> o sustituye <code>MLPClassifier</code> por <code>DecisionTreeClassifier</code> y compara las precisiones. Ver cómo cambian los resultados enseña más que leer la teoría.</p>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <p>Inteligencia Artificial — Trabajo escolar</p>
+  <p>&copy; 2026 CBTIS 260 "Carmen Serdán". Todos los derechos reservados.</p>
+  <div class="redes">
+    <a href="#" target="_blank" rel="noopener">Facebook</a>
+    <a href="#" target="_blank" rel="noopener">Instagram</a>
+    <a href="#" target="_blank" rel="noopener">YouTube</a>
+  </div>
+</footer>
+
+</body>
+</html>

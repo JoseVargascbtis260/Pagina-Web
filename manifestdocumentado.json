@@ -1,0 +1,55 @@
+{
+  "_comentario_general": "Manifest de la PWA. Le dice al navegador cómo instalar y mostrar la app. Las claves que empiezan con _comentario son solo documentación y el navegador las ignora.",
+
+  "_comentario_name": "Nombre completo de la app. Se ve en el cuadro de instalación y en la pantalla de carga.",
+  "name": "Inteligencia Artificial | CBTIS 260",
+
+  "_comentario_short_name": "Nombre corto que aparece debajo del ícono en el celular o escritorio.",
+  "short_name": "IA CBTIS 260",
+
+  "_comentario_description": "Descripción de la app, usada por algunos navegadores en el cuadro de instalación.",
+  "description": "Qué es la inteligencia artificial, su historia, cómo funciona y sus aplicaciones.",
+
+  "_comentario_lang": "Idioma del contenido (es = español). Ayuda a lectores de pantalla y navegadores.",
+  "lang": "es",
+
+  "_comentario_start_url": "Página que se abre al iniciar la app instalada. El ./ indica la misma carpeta, necesario para que funcione en GitHub Pages (usuario.github.io/repositorio/).",
+  "start_url": "./index.html",
+
+  "_comentario_scope": "Páginas que pertenecen a la app. Si el usuario sale de este alcance, se abre como página web normal. ./ cubre toda la carpeta del proyecto.",
+  "scope": "./",
+
+  "_comentario_display": "standalone = la app abre en su propia ventana, sin barra de direcciones ni botones del navegador, como una app nativa.",
+  "display": "standalone",
+
+  "_comentario_background_color": "Color de fondo (gris claro) mostrado en la pantalla de carga (splash) mientras arranca la app.",
+  "background_color": "#eef1f5",
+
+  "_comentario_theme_color": "Color (azul oscuro) de la barra superior o de estado del sistema cuando la app está abierta.",
+  "theme_color": "#0f2b47",
+
+  "_comentario_icons": "Lista de íconos. Chrome exige como mínimo uno de 192x192 y otro de 512x512 para permitir instalar la PWA. Campos: src = ruta de la imagen, sizes = tamaño en píxeles, type = formato, purpose = cómo se usa el ícono.",
+  "icons": [
+    {
+      "_comentario": "Ícono de 192x192 para pantalla de inicio y lanzadores. purpose any = se usa tal cual.",
+      "src": "icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "_comentario": "Ícono de 512x512 para pantalla de carga y tiendas. purpose any = se usa tal cual.",
+      "src": "icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "_comentario": "Mismo ícono de 512x512 pero maskable: Android puede recortarlo en círculo, cuadrado redondeado, etc. Deja el logo dentro del 80% central de la imagen para que no se corte.",
+      "src": "icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ]
+}
