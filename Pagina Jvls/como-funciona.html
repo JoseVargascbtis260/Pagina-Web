@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Cómo funciona | Inteligencia Artificial | CBTIS 260</title>
+<link rel="stylesheet" href="css/estilos.css">
+<link rel="manifest" href="manifest.webmanifest">
+<meta name="theme-color" content="#0f2b47">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="IA CBTIS 260">
+<link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+<link rel="icon" type="image/png" href="icons/icon-192.png">
+<script src="js/pwa.js" defer></script>
+</head>
+<body>
+
+<header>
+  <div class="marca">
+    <img src="img/logo-cbtis260.jpg" alt="Logo del CBTIS 260">
+    <div>
+      <h1>Centro de Bachillerato Tecnológico Industrial y de Servicios 260</h1>
+      <p class="lema">"Carmen Serdán"</p>
+    </div>
+  </div>
+  <p class="materia">Inteligencia Artificial: qué es, de dónde viene, cómo funciona y hacia dónde va.</p>
+</header>
+
+<nav>
+  <ul>
+    <li><a href="index.html">Inicio</a></li>
+    <li><a href="que-es.html">Qué es</a></li>
+    <li><a href="antecedentes.html">Antecedentes</a></li>
+    <li><a href="tipos.html">Tipos</a></li>
+    <li><a href="como-funciona.html" class="activa" aria-current="page">Cómo funciona</a></li>
+    <li><a href="generativa.html">IA generativa</a></li>
+    <li><a href="aplicaciones.html">Aplicaciones</a></li>
+    <li><a href="educacion.html">En la escuela</a></li>
+    <li><a href="codigo.html">Programación</a></li>
+    <li><a href="video.html">Video</a></li>
+    <li><a href="conclusion.html">Conclusión</a></li>
+  </ul>
+</nav>
+
+<main>
+
+  <section id="como-funciona">
+    <h2>¿Cómo aprende una IA?</h2>
+    <p class="bajada">El proceso de entrenamiento, explicado paso a paso.</p>
+
+    <p>
+      Entrenar un modelo es, en esencia, un proceso de prueba y corrección repetido millones de
+      veces. Se le presentan datos, produce una respuesta, se mide qué tan lejos quedó de la
+      respuesta correcta y se ajustan sus parámetros internos para acercarse un poco más. Ese ciclo
+      se repite hasta que el error deja de bajar.
+    </p>
+
+    <h3>Las etapas del proceso</h3>
+    <ul class="lista">
+      <li><strong>Recolección de datos.</strong> Se reúnen ejemplos representativos del problema. Es la etapa más larga y la que más determina el resultado final.</li>
+      <li><strong>Preparación.</strong> Se limpian los datos: se eliminan duplicados, se corrigen errores y se convierte todo a números, porque un modelo solo opera con números.</li>
+      <li><strong>División del conjunto.</strong> Los datos se separan en entrenamiento y prueba. El modelo nunca ve los datos de prueba mientras aprende, para poder evaluarlo con honestidad.</li>
+      <li><strong>Entrenamiento.</strong> El modelo ajusta sus parámetros para reducir el error, usando un algoritmo de optimización como el descenso del gradiente.</li>
+      <li><strong>Evaluación.</strong> Se mide su desempeño con los datos que no conocía. Aquí se detecta si memorizó en lugar de aprender.</li>
+      <li><strong>Despliegue y monitoreo.</strong> El modelo se pone en funcionamiento y se vigila, porque el mundo cambia y su precisión se degrada con el tiempo.</li>
+    </ul>
+
+    <h3>Las tres formas de aprendizaje</h3>
+    <div class="tabla-envoltura">
+      <table>
+        <caption>Comparación de los principales paradigmas de aprendizaje automático.</caption>
+        <thead>
+          <tr>
+            <th>Tipo</th>
+            <th>Cómo aprende</th>
+            <th>Ejemplo</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Supervisado</td>
+            <td>Con datos etiquetados: cada ejemplo viene acompañado de su respuesta correcta.</td>
+            <td>Clasificar correos como spam o no spam a partir de miles ya marcados.</td>
+          </tr>
+          <tr>
+            <td>No supervisado</td>
+            <td>Sin etiquetas: busca por sí mismo estructuras y agrupaciones en los datos.</td>
+            <td>Agrupar clientes de una tienda por hábitos de compra parecidos.</td>
+          </tr>
+          <tr>
+            <td>Por refuerzo</td>
+            <td>Mediante premios y castigos: prueba acciones y conserva las que dan mejor resultado.</td>
+            <td>Un programa que aprende a jugar videojuegos o a controlar un robot.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3>Dos errores frecuentes</h3>
+    <p>
+      El <strong>sobreajuste</strong> ocurre cuando un modelo memoriza los datos de entrenamiento en
+      lugar de aprender el patrón general: acierta casi siempre con los datos conocidos y falla con
+      los nuevos. Es como un estudiante que memoriza las respuestas del examen pasado sin entender
+      el tema. El <strong>subajuste</strong> es lo contrario: el modelo es demasiado simple para
+      capturar el patrón y falla en todo por igual.
+    </p>
+  </section>
+
+</main>
+
+<footer>
+  <p>Inteligencia Artificial — Trabajo escolar</p>
+  <p>&copy; 2026 CBTIS 260 "Carmen Serdán". Todos los derechos reservados.</p>
+  <div class="redes">
+    <a href="#" target="_blank" rel="noopener">Facebook</a>
+    <a href="#" target="_blank" rel="noopener">Instagram</a>
+    <a href="#" target="_blank" rel="noopener">YouTube</a>
+  </div>
+</footer>
+
+</body>
+</html>
